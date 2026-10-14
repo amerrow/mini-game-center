@@ -5,14 +5,16 @@ public class App {
     }
     public static void menu(){
         Scanner input = new Scanner(System.in);
-        System.out.println("games:\n1 = wordle\n2 = black jack");
+        System.out.println("games:\n1 = wordle\n2 = black jack\n3 = quit");
         int game = input.nextInt();
         if (game == 1){
-            wordle.playGame();
+            wordle.gameTime();
         } else if (game == 2){
-            System.out.println("black Jack");
+            System.out.println("black jack");
+        } else if (game == 3){
+           return;
         } else {
-            System.out.println("please enter a valid number");
+            System.out.println("enter a valid number");
             menu();
         }
         }

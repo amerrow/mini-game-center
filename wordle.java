@@ -127,5 +127,34 @@ public class wordle {
         String word = pickWord();
         checkGuess(word);
     }
+    public static void gameTime2(){
+        System.out.println("play again?\n1 = yes\n2 = no");
+        Scanner input = new Scanner(System.in);
+        int again = input.nextInt();
+        
+        if (again == 1){
+            gameTime();
+        } else if (again == 2){
+            App.menu();
+        } else {
+            System.out.print("enter a valid number");
+            gameTime2();
+        }
+    }
+    public static void gameTime(){
+        playGame();
+        System.out.println("play again?\n1 = yes\n2 = no");
+        Scanner input = new Scanner(System.in);
+        int again = input.nextInt();
+        
+        if (again == 1){
+            gameTime();
+        } else if (again == 2){
+            App.menu();
+        } else {
+            System.out.print("enter a valid number");
+            gameTime2();
+        }
+    }
     
 }
