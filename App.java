@@ -8,7 +8,7 @@ public class App {
         System.out.println("games:\n1 = wordle\n2 = black jack");
         int game = input.nextInt();
         if (game == 1){
-            System.out.println("wordle");
+            wordle.playGame();
         } else if (game == 2){
             System.out.println("black jack");
         } else {
