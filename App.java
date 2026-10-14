@@ -10,7 +10,7 @@ public class App {
         if (game == 1){
             wordle.playGame();
         } else if (game == 2){
-            System.out.println("black jack");
+            System.out.println("black Jack");
         } else {
             System.out.println("please enter a valid number");
             menu();
