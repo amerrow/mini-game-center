@@ -10,7 +10,8 @@ public class App {
         if (game == 1){
             wordle.gameTime();
         } else if (game == 2){
-            System.out.println("black jack");
+            blackjack plzWork = new blackjack();
+            plzWork.gamin();
         } else if (game == 3){
            return;
         } else {
