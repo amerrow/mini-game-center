@@ -41,11 +41,13 @@ public class blackjack {
      private int play3 = 0;
      private int play4 = 0;
      private int play5 = 0;
-     private int total = play1 + play2 + play3 + play4 + play5;
+     private int total = play1 + play2;
+     private int loops = 0;
 
 
      public void deal(){
         System.out.println("you have " + play1 + " and " + play2);
+        System.out.println("total: " + total);
         System.out.println("the dealer is showing " + bot1);
      }
 
@@ -61,20 +63,21 @@ public class blackjack {
         Scanner input = new Scanner(System.in);
         System.out.println("1 = hit\n2 = stand");
         int hit = input.nextInt();
-        int loops = 0;
 
         if (hit == 1){
             if (loops == 0){
                play3 = cards();
                System.out.println("you got " + play3);
+               total = play1 + play2 + play3;
                if (check() == true){
                     return true;
                }
                System.out.println("total: " + total);
-            loops++;
+               loops++;
             } else if (loops == 1){
                play4 = cards();
                System.out.println("you got " + play4);
+               total = play1 + play2 + play3 + play4;
                if (check() == true){
                     return true;
                }
@@ -83,6 +86,7 @@ public class blackjack {
             } else if (loops == 2){
                play5 = cards();
                System.out.println("you got " + play5);
+               total = play1 + play2 + play3 + play4 + play5;
                if (check() == true){
                     return true;
                }
@@ -103,23 +107,52 @@ public class blackjack {
      private int bot3 = 0;
      private int bot4 = 0;
      private int bot5 = 0;
-     private int botTotal = bot1 + bot2 + bot3 + bot4 + bot5;
-     public void botCheck(){
-          if (botTotal < 21){
-               bot3 = cards();
-               System.out.println("bot got " + bot3);
-               botCheck();
-          }
-          if (botTotal < 21){
-               bot4 = cards();
-               System.out.println("bot got " + bot4);
-               botCheck();
-          } 
-          if (botTotal < 21){
-               bot5 = cards();
-               System.out.println("bot got " + bot5);
+     private int botTotal = bot1 + bot2;
+     private int botLoop = 0;
+
+     public boolean smallCheck(){
+          if (botTotal > total){
+               return true;
+          } else {
+               return false;
           }
      }
+
+
+     public void botCheck(){
+          if (smallCheck() == true){
+
+          }else {
+               if (botTotal <= 21){
+                    if (botLoop == 0){
+                         bot3 = cards();
+                         System.out.println("dealer got " + bot3);
+                         botTotal = bot1 + bot2 + bot3;
+                         System.out.println("dealer total: " + botTotal);
+                         botLoop++;
+                         botCheck();
+                    } else if (botLoop == 1){
+                         bot4 = cards();
+                         System.out.println("dealer got " + bot4);
+                         botTotal = bot1 + bot2 + bot3 + bot4;
+                         System.out.println("dealer total: " + botTotal);
+                         botLoop++;
+                         botCheck();
+                    } else if (botLoop == 2){
+                         bot5 = cards();
+                         System.out.println("dealer got " + bot5);
+                         botTotal = bot1 + bot2 + bot3 + bot4 + bot5;
+                         System.out.println("dealer total: " + botTotal);
+                         botLoop++;
+                         botCheck();
+                    } 
+               } else {
+                    System.out.println("dealer busted");
+                    return;
+               }
+          }
+     }
+
      public void gameCheck(){
           if (total > botTotal){
                System.out.println("you win");
@@ -131,8 +164,22 @@ public class blackjack {
      public void gamin(){
           deal();
           hit();
-          botCheck();
-          gameCheck();
+          if (check() == true){
+               return;
+          } else {
+               System.out.println("dealer has " + bot1 + " and "+ bot2);
+               System.out.println("dealer total: " + botTotal);
+               if (botTotal >= 21){
+                    gameCheck();
+               } else{
+                    botCheck();
+                    if (botTotal >= 21){
+                         System.out.println("you win");
+                    }else {
+                         gameCheck();
+                    }
+               }
+          }
     }
 }
 
