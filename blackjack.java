@@ -95,7 +95,7 @@ public class blackjack {
                }
                loops++;
             } else if (loops == 3){
-               play5 = cards();
+               play6 = cards();
                System.out.println("you got " + play6);
                total = play1 + play2 + play3 + play4 + play5 + play6;
                System.out.println("total: " + total);
@@ -104,7 +104,7 @@ public class blackjack {
                }
                loops++;
           } else if (loops == 4){
-               play5 = cards();
+               play7 = cards();
                System.out.println("you got " + play7);
                total = play1 + play2 + play3 + play4 + play5 + play6 + play7;
                System.out.println("total: " + total);
