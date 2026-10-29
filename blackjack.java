@@ -67,7 +67,7 @@ public class blackjack {
         int hit = input.nextInt();
 
         if (hit == 1){
-            if (loops == 0){
+          if (loops == 0){
                play3 = cards();
                System.out.println("you got " + play3);
                total = play1 + play2 + play3;
@@ -76,7 +76,7 @@ public class blackjack {
                     return true;
                }
                loops++;
-            } else if (loops == 1){
+          } else if (loops == 1){
                play4 = cards();
                System.out.println("you got " + play4);
                total = play1 + play2 + play3 + play4;
@@ -85,7 +85,7 @@ public class blackjack {
                     return true;
                }
                loops++;
-            } else if (loops == 2){
+          } else if (loops == 2){
                play5 = cards();
                System.out.println("you got " + play5);
                total = play1 + play2 + play3 + play4 + play5;
@@ -94,7 +94,7 @@ public class blackjack {
                     return true;
                }
                loops++;
-            } else if (loops == 3){
+          } else if (loops == 3){
                play6 = cards();
                System.out.println("you got " + play6);
                total = play1 + play2 + play3 + play4 + play5 + play6;
@@ -114,14 +114,14 @@ public class blackjack {
                loops++;
           } else {
                return false;
-            }
-            hit();
-        } else if (hit == 2){
-            return false;
-        } else {
-            System.out.println("enter a valid number");
-            hit();
-        }
+               }
+               hit();
+          } else if (hit == 2){
+               return false;
+          } else {
+               System.out.println("enter a valid number");
+               hit();
+          }
         return false;
      }
 
@@ -142,7 +142,7 @@ public class blackjack {
 
      public void botCheck(){
           if (smallCheck() == true){
-
+               
           }else {
                if (botTotal <= 21){
                     if (botLoop == 0){
@@ -167,9 +167,7 @@ public class blackjack {
                          botLoop++;
                          botCheck();
                     } 
-               } else {
-                    System.out.println("dealer busted");
-               }
+               } 
           }
      }
 
@@ -228,7 +226,7 @@ public class blackjack {
                System.out.println("enter a valid number");
                gaminTime();
           }
-    }
+     }
 
     public void gaminTime(){
           System.out.println("play again?\n1 = yes\n2 = no");
@@ -243,11 +241,7 @@ public class blackjack {
                System.out.println("enter a valid number");
                gaminTime();
           }
-    }
-
-
-
-
+     }
 }
 
 

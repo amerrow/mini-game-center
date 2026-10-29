@@ -74,39 +74,39 @@ public class wordle {
         String word5 = word.substring(4, 5);
         
         if (gues1.equals(word1)){
-            System.out.println("1 = green");
+            System.out.println(gues1 + " = green");
         } else if (gues1.equals(word2) || gues1.equals(word3) || gues1.equals(word4) || gues1.equals(word5)){
-            System.out.println("1 = yellow");
+            System.out.println(gues1 + " = yellow");
         } else {
-            System.out.println("1 = red");
+            System.out.println(gues1 + " = red");
         }
         if (gues2.equals(word2)){
-            System.out.println("2 = green");
+            System.out.println(gues2 + " = green");
         } else if (gues2.equals(word1) || gues2.equals(word3) || gues2.equals(word4) || gues2.equals(word5)){
-            System.out.println("2 = yellow");
+            System.out.println(gues2 + " = yellow");
         } else {
-            System.out.println("2 = red");
+            System.out.println(gues2 +" = red");
         }
         if (gues3.equals(word3)){
-            System.out.println("3 = green");
+            System.out.println(gues3 + " = green");
         } else if (gues3.equals(word2) || gues3.equals(word1) || gues3.equals(word4) || gues3.equals(word5)){
-            System.out.println("3 = yellow");
+            System.out.println(gues3 + " = yellow");
         } else {
-            System.out.println("3 = red");
+            System.out.println(gues3 + " = red");
         }
         if (gues4.equals(word4)){
-            System.out.println("4 = green");
+            System.out.println(gues4 + " = green");
         } else if (gues4.equals(word2) || gues4.equals(word3) || gues4.equals(word1) || gues4.equals(word5)){
-            System.out.println("4 = yellow");
+            System.out.println(gues4 + " = yellow");
         } else {
-            System.out.println("4 = red");
+            System.out.println(gues4 + " = red");
         }
         if (gues5.equals(word5)){
-            System.out.println("5 = green");
+            System.out.println(gues5 + " = green");
         } else if (gues5.equals(word2) || gues5.equals(word3) || gues5.equals(word4) || gues5.equals(word1)){
-            System.out.println("5 = yellow");
+            System.out.println(gues5 + " = yellow");
         } else {
-            System.out.println("5 = red");
+            System.out.println(gues5 + " = red");
         }
 
 
